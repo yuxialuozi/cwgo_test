@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package User;
+
+option go_package = "idl/User";
+
+// table_name: Roles
+message User {
+    int64 Id = 1; // (idl.tag="sql:\"primary_key, auto_increment\"")
+    string username = 2; // (idl.tag="sql:\"type=varchar(255)\"")
+    int32 age = 3; // (idl.tag="sql:\"type=int\"")
+    string city = 4;// (idl.tag="sql:\"type=varchar(255)\"")
+    bool banned = 5; // (idl.tag="sql:\"type=boolean\"")
+    string Email = 7; //
+    int64 RoleId = 8; // (idl.tag="sql:\"foreign_key=Roles(Id)\"")
+}
